@@ -1,0 +1,30 @@
+.molkky-board-input {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: stretch;
+}
+
+.molkky-board-input .molkky-row {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.molkky-board-input .molkky-row label input[type="checkbox"] {
+  display: none;
+}
+
+.molkky-board-input .molkky-row label {
+  font-size: 125%;
+  border: 2px solid hsl(217, 71%, 53%);
+  border-radius: 50%;
+  padding: 1em 0;
+  text-align: center;
+  width: 4em;
+}
+
+.molkky-board-input .molkky-row label.selected {
+  background-color: hsl(217, 71%, 53%);
+  color: white;
+}

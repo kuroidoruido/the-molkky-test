@@ -1,0 +1,16 @@
+.new-game-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.new-game-page .add-player-form {
+  display: flex;
+  gap: 1em;
+}
+
+.new-game-page .player-list .player {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}

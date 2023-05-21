@@ -1,0 +1,3 @@
+.panel-block.panel-collapsible-block:not(.collapse) {
+  border-bottom: none;
+}

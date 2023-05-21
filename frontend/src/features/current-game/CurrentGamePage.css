@@ -1,0 +1,6 @@
+.current-game-page .board-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+}
