@@ -4,7 +4,7 @@
 
 Règles du molkky courtes ([version complète ici](https://www.molkky.info/regles-officielles/)) : 
 - si on lance en faisant tomber une quille, on marque la valeur indiqué sur la quille
-- si on lancee et qu'on ne fait tomber aucune quille, on marque le nombre de quille tombée
+- si on lancee et qu'on fait tomber plusieurs quilles, on marque le nombre de quille tombée
 - si on ne touche aucune quille, on ne marque pas de point
 - si on ne marche aucun point pendant trois tours consécutifs on perd la partie
 - si on atteint 50 exactement on gagne la partie
