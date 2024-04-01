@@ -21,7 +21,7 @@ export function useGame(gameId: string) {
     });
   };
 
-  return { game, currentPlayer, saveTurn };
+  return { game, currentPlayer, saveTurn } as const;
 }
 
 function computeLastPlayer(scores: Record<string, Turn[]>) {

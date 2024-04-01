@@ -1,12 +1,16 @@
 {
   "name": "the-molkky-test",
   "scripts": {
-    "dev:backend": "npm run start:dev --workspace=backend",
-    "dev:frontend": "npm run dev --workspace=frontend",
-    "test:backend": "npm run test --workspace=backend"
+    "dev": "concurrently \"npm:dev-backend\" \"npm:dev-frontend\" \"npm:test-backend\"",
+    "dev-backend": "npm run start:dev --workspace=backend",
+    "dev-frontend": "npm run dev --workspace=frontend",
+    "test-backend": "npm run test:watch --workspace=backend"
   },
   "workspaces": [
     "backend",
     "frontend"
-  ]
+  ],
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
 }

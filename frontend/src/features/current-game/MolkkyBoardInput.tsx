@@ -2,6 +2,7 @@ import "./MolkkyBoardInput.css";
 
 export interface MolkkyBoardInputProps {
   selectedPins: number[];
+  disabled?: boolean;
   onPinChanges(pins: number[]): void;
 }
 
@@ -14,10 +15,11 @@ const BOARD = [
 
 export function MolkkyBoardInput({
   selectedPins,
+  disabled = false,
   onPinChanges,
 }: MolkkyBoardInputProps) {
   return (
-    <div className="molkky-board-input">
+    <div className={"molkky-board-input" + (disabled ? " disabled" : "")}>
       {BOARD.map((row, rowIndex) => (
         <div key={rowIndex} className="molkky-row">
           {row.map((pin) => (
@@ -29,6 +31,7 @@ export function MolkkyBoardInput({
                 type="checkbox"
                 value={pin}
                 checked={selectedPins.includes(pin)}
+                disabled={disabled}
                 onChange={() => {
                   if (selectedPins.includes(pin)) {
                     onPinChanges(selectedPins.filter((p) => p !== pin));

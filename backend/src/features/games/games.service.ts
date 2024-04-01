@@ -6,6 +6,7 @@ import {
 import { Game } from './games.model';
 import ShortUniqueId from 'short-unique-id';
 import { computeNewTurn } from 'src/utils/score.utils';
+import { computeNewStatus } from 'src/utils/status.utils';
 
 @Injectable()
 export class GamesService {
@@ -24,9 +25,14 @@ export class GamesService {
       date: new Date(),
       players,
       score: Object.fromEntries(players.map((p) => [p, []])),
+      status: 'pending',
     };
     await this.gamesRepository.upsertGame(game);
     return game;
+  }
+
+  getAllGames() {
+    return this.gamesRepository.getAllGames();
   }
 
   getGame(gameId: string) {
@@ -40,7 +46,9 @@ export class GamesService {
       if (!playerTurns) {
         throw new PlayerNotFoundError(player);
       }
-      game.score[player] = [...playerTurns, computeNewTurn(playerTurns, pins)];
+      const newTurn = computeNewTurn(playerTurns, pins);
+      game.score[player] = [...playerTurns, newTurn];
+      game.status = computeNewStatus(game);
       await this.gamesRepository.upsertGame(game);
       return game;
     } catch (findGameError) {

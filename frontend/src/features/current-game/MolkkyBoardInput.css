@@ -28,3 +28,9 @@
   background-color: hsl(217, 71%, 53%);
   color: white;
 }
+
+.molkky-board-input.disabled .molkky-row label {
+  border-color: lightgray;
+  color: gray;
+  cursor: not-allowed;
+}

@@ -38,6 +38,7 @@ export interface Game {
   date: Date;
   players: string[];
   score: Record<string, Turn[]>;
+  status: GameStatus;
 }
 
 export type LostTurn = { type: "lost" };
@@ -45,6 +46,7 @@ export type FailedTurn = { type: "fail" };
 export type OkTurn = { type: "ok"; pins: number[]; score: number };
 export type WinTurn = { type: "win"; pins: number[]; score: number };
 export type Turn = LostTurn | FailedTurn | OkTurn | WinTurn;
+export type GameStatus = "pending" | "end";
 
 export const GameService = new GameServiceImpl();
 
@@ -72,6 +74,7 @@ const GAMES: Game[] = [
         { type: "ok", pins: [12], score: 25 },
       ],
     },
+    status: "end",
   },
   {
     id: "74zj4gfMrafD4rVU",
@@ -95,5 +98,6 @@ const GAMES: Game[] = [
         { type: "lost" },
       ],
     },
+    status: "end",
   },
 ];
