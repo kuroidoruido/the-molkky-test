@@ -17,7 +17,7 @@ Quand vous exécutez les tests unitaires (avec `npm run dev` ou `npm run test-ba
 
 Vous devez faire passer tous les tests.
 
-> Indice: les règles peuvent pas pas avoir été implémenté ou pas correctement 🙈 
+> Astuce: les règles peuvent pas pas avoir été implémenté ou pas correctement 🙈 
 
 ### Come on the backend side! 😈
 
@@ -25,7 +25,7 @@ Il manque un endpoint : GET http://localhost:3000/api/games
 
 Vous devez l'implémenter.
 
-> Astruce: jetez un coup d'œil à `backend/src/features/games/rest/games.controller.ts` 😉
+> Astuce: jetez un coup d'œil à `backend/src/features/games/rest/games.controller.ts` 😉
 
 ### Go to the front side! 😇
 
